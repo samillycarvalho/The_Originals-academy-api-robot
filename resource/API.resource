@@ -33,11 +33,9 @@ Criar um novo usuário
     ${palavra_randomica}=    Generate Random String    8    chars=[LETTERS]
     ${palavra_randomica}=    Convert To Lower Case    ${palavra_randomica}
     ${cpf_randomico}=        Generate Random String   11    chars=[NUMBERS]
-    ${palavra_randomica}=    Generate Random String    100   chars=[LETTERS]
-    ${palavra_randomica}=    Convert To Lower Case     ${palavra_randomica}
     Set Test Variable        ${CPF}                    ${cpf_randomico}
     Set Test Variable        ${EMAIL_TEST}              ${palavra_randomica}@hotmail.com
-    Set Test Variable       ${nome100}                  ${palavra_randomica}
+   
 
 Criar um nome randomico departamento/board     
    ${nome_randomic}      Generate Random String    10   chars=[LETTERS]
@@ -143,7 +141,7 @@ usuário com fullName com 101 caracteres
 
 usuário com fullName com 100 caracteres 
    ${headers}=  Create Dictionary      Authorization=${TOKEN}
-    ${body}    Create Dictionary      fullName=${nome100}      mail=${EMAIL_TEST}
+    ${body}    Create Dictionary      fullName=${fullName100carc}    mail=${EMAIL_TEST}
     ...    password=${password}  confirmPassword=${password}   accessProfile=${accessProfile}     cpf=${CPF}
     Log  ${body}
    Create API Session
