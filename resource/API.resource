@@ -5,7 +5,6 @@ Library   String
 Library   RequestsLibrary
 Resource  variables.resource
 
-
 *** Keywords ***
 Create API Session
     ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json
@@ -34,8 +33,11 @@ Criar um novo usuário
     ${palavra_randomica}=    Generate Random String    8    chars=[LETTERS]
     ${palavra_randomica}=    Convert To Lower Case    ${palavra_randomica}
     ${cpf_randomico}=        Generate Random String   11    chars=[NUMBERS]
-    Set Test Variable        ${CPF}    ${cpf_randomico}
-    Set Test Variable        ${EMAIL_TEST}    ${palavra_randomica}@hotmail.com
+    ${palavra_randomica}=    Generate Random String    100   chars=[LETTERS]
+    ${palavra_randomica}=    Convert To Lower Case     ${palavra_randomica}
+    Set Test Variable        ${CPF}                    ${cpf_randomico}
+    Set Test Variable        ${EMAIL_TEST}              ${palavra_randomica}@hotmail.com
+    Set Test Variable       ${nome100}                  ${palavra_randomica}
 
 Criar um nome randomico departamento/board     
    ${nome_randomic}      Generate Random String    10   chars=[LETTERS]
@@ -44,7 +46,7 @@ Criar um nome randomico departamento/board
    Log     ${nomedepartamento}
    ${nome_randomic}      Generate Random String    9   chars=[LETTERS]
    ${nome_randomic}      Convert To Lower Case    ${nome_randomic} 
-   Set Test Variable    ${nomedepart&}        ${nome_randomic}depar&
+   Set Test Variable    ${nomedepart&}        ${nome_randomic}&
    Log     ${nomedepart&}
    ${nome_randomic}      Generate Random String    8   chars=[LETTERS]
    ${nome_randomic}      Convert To Uppercase    ${nome_randomic} 
@@ -78,7 +80,7 @@ Cadastrar um usuario
 
 
 usuário com fullName em branco
-    ${headers}=  Create Dictionary      Authorization=${TOKEN}
+    ${headers}=  Create Dictionary     Authorization=${TOKEN}
     ${body}    Create Dictionary           mail=${EMAIL_TEST}    password=${password} 
     ...  confirmPassword=${password}   accessProfile=${accessProfile}     cpf=${CPF}
     Log  ${body}
@@ -141,7 +143,7 @@ usuário com fullName com 101 caracteres
 
 usuário com fullName com 100 caracteres 
    ${headers}=  Create Dictionary      Authorization=${TOKEN}
-    ${body}    Create Dictionary      fullName=${fullName100carc}     mail=${EMAIL_TEST}
+    ${body}    Create Dictionary      fullName=${nome100}      mail=${EMAIL_TEST}
     ...    password=${password}  confirmPassword=${password}   accessProfile=${accessProfile}     cpf=${CPF}
     Log  ${body}
    Create API Session

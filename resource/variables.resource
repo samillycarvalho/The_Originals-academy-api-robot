@@ -10,7 +10,6 @@ ${fullName23}               Fulano da Silva Santos34
 ${fullName##}               Fulano da Silva Santos#@
 ${fullNameminusculo}        fulano da silva santos
 ${fullName101carc}          Jussara Maria Mariana Muriá da Silva Penha dos Santos Sousa Oliveira Alves Carvalho Maia Marianoconsi
-${fullName100carc}          Kussara Maria Mariana Muriá da Silva Penha dos Santos Sousa Oliveira Alves Carvalho Maia Marianocond
 ${emailespacodominio}       fulanodasila @qa .coders.com
 ${emailinválido}            fulana.coders.com
 ${password13}               123456@Testest
