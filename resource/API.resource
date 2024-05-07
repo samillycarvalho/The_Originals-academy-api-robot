@@ -232,7 +232,8 @@ usuário com senha com 8 caracteres
     ...     confirmPassword=${password8}   accessProfile=${accessProfile}      cpf=${CPF}
     Log  ${body}
    Create API Session
-    ${response}  POST On Session   alias=APITheOriginals   url=/api/user  json=${body}    headers=${headers}    expected_status=201
+    ${response}  POST On Session   alias=APITheOriginals   url=/api/user  json=${body} 
+    ...    headers=${headers}    expected_status=201
     Log  ${response.json()}
     Set Test Variable    ${ID_USUARIO}   ${response.json()['user']['_id']}
     Set Test Variable    ${ID_USUARIO}   ${response.json()}
@@ -357,7 +358,8 @@ departamento com letras minúscula
     ${body}=    Create Dictionary    departmentName=${nomedepartminus}   costCenterId=65855af6a2d3ae70485da0b7
     Log   ${body}
     Create API Session
-    ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
+    ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/ 
+    ...    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
     Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
