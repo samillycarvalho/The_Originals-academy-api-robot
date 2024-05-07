@@ -66,7 +66,7 @@ code .
 
 ### Resultados
 
-Tests Log
-![alt text](image.png)
+![image](https://github.com/samillycarvalho/The_Originals-academy-api-robot/assets/116562223/c898961f-9870-4d0f-a7ae-42cd16441d8d)
+
 
 
