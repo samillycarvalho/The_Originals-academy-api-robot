@@ -337,8 +337,8 @@ Incluir department
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()['newDepartment']['_id']}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()}
 
 departamento com letras maiusculas
     ${headers}=    Create Dictionary    Authorization=${token}
@@ -348,8 +348,8 @@ departamento com letras maiusculas
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()['newDepartment']['_id']}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()}
 
 
 departamento com letras minúscula
@@ -361,8 +361,8 @@ departamento com letras minúscula
     ...    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()['newDepartment']['_id']}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()}
 
 
 departamento com letras e caractere &
@@ -373,8 +373,8 @@ departamento com letras e caractere &
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DEPARTAMENTO}  ${response.json()['newDepartment']['_id']}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()}
 
 
 departamento com letras e numeros
@@ -441,8 +441,8 @@ departament com 50 caractere
     ${response}=    POST On Session    alias=APITheOriginals    url=/api/department/    json=${body}  
     ...        headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newDepartment']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()} 
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()['newDepartment']['_id']}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()} 
     
 
 
@@ -450,7 +450,7 @@ Listar department
     ${headers}=    Create Dictionary    Authorization=${token}
     ${response}  GET On Session  alias=APITheOriginals   url=/api/department  headers=${headers}
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()} 
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()} 
 
 
 Editar departamento
@@ -460,7 +460,7 @@ Editar departamento
     ${response}  PUT On Session  alias=APITheOriginals   url=/api/department/66201627a8c16a1961d9710e  
     ...    json=${body}    headers=${headers}   expected_status=200
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DEPARTAMENTO}   ${response.json()}
 
 
 # DIRETORIA

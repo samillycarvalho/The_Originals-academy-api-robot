@@ -21,10 +21,10 @@ jobs:
       - name: Run Robot Framework tests
         # run: echo Executando os testes de API do Robot
         run: |
-          robot -d results ./tests/departamento.robot
+          robot -d results.departamento ./tests/departamento.robot
       - name: Test Report
         # run: echo Salvando o Report dos Testes
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
-          path: results/**
+          path: results.departamento/**

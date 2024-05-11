@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on linux)" generated="2024-05-11T17:44:40.390954" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/home/sami/academy/APIacademy/tests/login.robot">
+<test id="s1-t1" name="CT01 - Obter Token de Acesso" line="8">
+<kw name="Create API Session" owner="API">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.515028" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.514804" elapsed="0.000250"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-05-11T17:44:40.515342" level="INFO">Creating Session using : alias=APITheOriginals, url=https://the-originals.qacoders-academy.com.br, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=APITheOriginals</arg>
+<arg>url=https://the-originals.qacoders-academy.com.br</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-05-11T17:44:40.515167" elapsed="0.000342"/>
+</kw>
+<status status="PASS" start="2024-05-11T17:44:40.514141" elapsed="0.001432"/>
+</kw>
+<kw name="Login de acesso" owner="API">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.516189" level="INFO">${body} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<var>${body}</var>
+<arg>mail=${mail}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.515954" elapsed="0.000252"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.516363" level="INFO">{'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.516279" elapsed="0.000111"/>
+</kw>
+<kw name="Create API Session" owner="API">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.516701" level="INFO">${headers} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.516600" elapsed="0.000118"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-05-11T17:44:40.516903" level="INFO">Creating Session using : alias=APITheOriginals, url=https://the-originals.qacoders-academy.com.br, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=APITheOriginals</arg>
+<arg>url=https://the-originals.qacoders-academy.com.br</arg>
+<arg>headers=${headers}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-05-11T17:44:40.516789" elapsed="0.000202"/>
+</kw>
+<status status="PASS" start="2024-05-11T17:44:40.516472" elapsed="0.000565"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-05-11T17:44:40.806072" level="INFO">POST Request : url=https://the-originals.qacoders-academy.com.br/api/login 
+ path_url=/api/login 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
+ body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
+ </msg>
+<msg time="2024-05-11T17:44:40.806353" level="INFO">POST Response : url=https://the-originals.qacoders-academy.com.br/api/login 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Sat, 11 May 2024 20:45:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'ETag': 'W/"534-aQD4moGTPDgfYgT204e2U5YR6/g"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"65330c1efb8f3dad13a6808b","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$3kC10vu/EjMoRQUmqQq/H.7crWYIIBcBDT2g4RU0BQ4mrRi4JExOu","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 20/10/2023, 20:24:14 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"65330c1efb8f3dad13a6808c"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxNTQ2MDMwMCwiZXhwIjoxNzE1NTQ2NzAwfQ.V-_p_SUVR5dWfn_BJhpEeSX9Zao4MV1pUCq1r3psHWA"} 
+ </msg>
+<msg time="2024-05-11T17:44:40.806536" level="INFO">/usr/lib/python3.12/site-packages/urllib3/connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-originals.qacoders-academy.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-11T17:44:40.806816" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>alias=APITheOriginals</arg>
+<arg>url=/api/login</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.517102" elapsed="0.289787"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.808858" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '65330c1efb8f3dad13a6808b', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$3kC10vu/EjMoRQUmqQq/H.7crWYIIBcBDT2g4RU0BQ4mrRi4JExOu', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 20/10/2023, 20:24:14 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '65330c1efb8f3dad13a6808c'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxNTQ2MDMwMCwiZXhwIjoxNzE1NTQ2NzAwfQ.V-_p_SUVR5dWfn_BJhpEeSX9Zao4MV1pUCq1r3psHWA'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.807306" elapsed="0.001807"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.812136" level="INFO">${TOKEN} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ...</msg>
+<arg>${TOKEN}</arg>
+<arg>${response.json()["token"]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.809453" elapsed="0.002790"/>
+</kw>
+<status status="PASS" start="2024-05-11T17:44:40.515745" elapsed="0.296681"/>
+</kw>
+<kw name="Validar o token e gravar em um header de autorização" owner="API">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.814020" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd...</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${TOKEN}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.813466" elapsed="0.000646"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-05-11T17:44:40.834036" level="INFO">GET Request : url=https://the-originals.qacoders-academy.com.br/api/validateToken 
+ path_url=/api/validateToken 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxNTQ2MDMwMCwiZXhwIjoxNzE1NTQ2NzAwfQ.V-_p_SUVR5dWfn_BJhpEeSX9Zao4MV1pUCq1r3psHWA'} 
+ body=None 
+ </msg>
+<msg time="2024-05-11T17:44:40.834206" level="INFO">GET Response : url=https://the-originals.qacoders-academy.com.br/api/validateToken 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Sat, 11 May 2024 20:45:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization', 'ETag': 'W/"f-z+y5G3b6F1BDJ1A7U6QoI6VUcbI"'} 
+ body={"valid":false} 
+ </msg>
+<msg time="2024-05-11T17:44:40.834286" level="INFO">/usr/lib/python3.12/site-packages/urllib3/connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-originals.qacoders-academy.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-11T17:44:40.834538" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>alias=APITheOriginals</arg>
+<arg>url=/api/validateToken</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.814515" elapsed="0.020066"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.837263" level="INFO">{"valid":false}</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.835487" elapsed="0.001904"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-11T17:44:40.837966" level="INFO">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMzMGMxZWZiOGYzZGFkMTNhNjgwOGIiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQza0MxMHZ1L0VqTW9SUVVtcVFxL0guN2NyV1lJSUJjQkRUMmc0UlUwQlE0bXJSaTRKRXhPdSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDIwLzEwLzIwMjMsIDIwOjI0OjE0IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjUzMzBjMWVmYjhmM2RhZDEzYTY4MDhjIn1dLCJfX3YiOjAsImlhdCI6MTcxNTQ2MDMwMCwiZXhwIjoxNzE1NTQ2NzAwfQ.V-_p_SUVR5dWfn_BJhpEeSX9Zao4MV1pUCq1r3psHWA</msg>
+<arg>${TOKEN}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-11T17:44:40.837787" elapsed="0.000236"/>
+</kw>
+<status status="PASS" start="2024-05-11T17:44:40.812872" elapsed="0.025271"/>
+</kw>
+<status status="PASS" start="2024-05-11T17:44:40.513608" elapsed="0.325016"/>
+</test>
+<status status="PASS" start="2024-05-11T17:44:40.391609" elapsed="0.447877"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
