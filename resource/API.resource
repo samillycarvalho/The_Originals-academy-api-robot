@@ -4,7 +4,6 @@ Library   Collections
 Library   String
 Library   RequestsLibrary
 Resource  variables.resource
-
 *** Keywords ***
 Create API Session
     ${headers}    Create Dictionary    accept=application/json    Content-Type=application/json
@@ -470,7 +469,7 @@ Listar diretoria
     ${response}  GET On Session  alias=APITheOriginals   url=/api/board 
     ...  headers=${headers}    expected_status=200
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()} 
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()} 
 
 
 Incluir diretoria
@@ -480,8 +479,8 @@ Incluir diretoria
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...    json=${body}    headers=${headers}  expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newBoard']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()['newBoard']['_id']}
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()}
     
 
 diretoria com letras maiúsculas
@@ -491,8 +490,8 @@ diretoria com letras maiúsculas
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...    json=${body}    headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newBoard']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}  
+    Set Test Variable    ${ID_DIRETORIA}   ${response.json()['newBoard']['_id']}
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()}  
 
 
 diretoria com letras minúsculas      
@@ -502,8 +501,8 @@ diretoria com letras minúsculas
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...     json=${body}    headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newBoard']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}  
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()['newBoard']['_id']}
+    Set Test Variable    ${ID_DIRETORIA}    ${response.json()}  
 
 diretoria com letras e caractere &     
     ${headers}=    Create Dictionary    Authorization=${token}
@@ -512,8 +511,8 @@ diretoria com letras e caractere &
     ${response}   POST On Session  alias=APITheOriginals   url=/api/board  
     ...     json=${body}    headers=${headers}   expected_status=201
     Log   ${response.json()}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()['newBoard']['_id']}
-    Set Test Variable    ${ID_USUARIO}   ${response.json()}  
+    Set Test Variable    ${ID_DIRETORIA}   ${response.json()['newBoard']['_id']}
+    Set Test Variable    ${ID_DIRETORIA}   ${response.json()}  
 
 
 

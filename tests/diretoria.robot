@@ -15,9 +15,9 @@ CT02 - diretoria com letras maiúsculas
    diretoria com letras maiúsculas
 
 CT03 - diretoria com letras minúsculas
-    Create API Session  
-    Login de acesso
-    Criar um nome randomico departamento/board 
+   Create API Session  
+   Login de acesso
+   Criar um nome randomico departamento/board 
    diretoria com letras minúsculas
 
 CT04 - diretoria com letras e caractere & 
