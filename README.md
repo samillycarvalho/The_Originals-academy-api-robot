@@ -68,5 +68,6 @@ code .
 
 ![image](https://github.com/samillycarvalho/The_Originals-academy-api-robot/assets/116562223/c898961f-9870-4d0f-a7ae-42cd16441d8d)
 
-
+## Projeto desenvolvido por:
+- [@samillycarvalho](https://www.linkedin.com/in/s%C3%A2milly-carvalho-444638226/)
 
